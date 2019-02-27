@@ -1,0 +1,111 @@
+<div class="row">
+
+
+    <div class="col-md-3">
+        <div class="menuadmin seleccionado" routerLink="/usuarios">Usuarios</div>
+    </div>
+    <div class="col-md-3">
+            <div class="menuadmin " routerLink="/encuestaAdmin"
+            >Encuestas</div>
+        </div>
+        <div class="col-md-3">
+                <div class="menuadmin " routerLink="/lineagrafica">Línea gráfica</div>
+            </div>
+            <div class="col-md-3">
+                    <div class="cerrar " (click)="cerrarsesion()">Cerrar Sesión</div>
+                </div>
+    
+
+    </div>
+    <div class="container contUsers">
+         
+        <div class="row">
+      
+            <div class="col-md-4">
+                
+                <div class="card">
+                        <h4 class="title">Nuevo Usuario</h4>
+                    <div >
+                        <form #userForm="ngForm" (ngSubmit)="addUser(userForm)">
+                            <input type="hidden" name="_id" #_id="ngModel" [(ngModel)]="userService.selectedUser._id">
+                            <div class="row">
+
+                                <div class="input-field col-md-12">
+                                    
+                                    <input type="text" name="name" #name="ngModel"
+                                        [(ngModel)]="userService.selectedUser.name" placeholder="Nombre">
+                                </div>
+                                <div class="input-field col-md-12">
+                                    <input type="text" name="lastname" #lastname="ngModel"
+                                        [(ngModel)]="userService.selectedUser.lastname" placeholder="Apellido">
+                                </div>
+                                <div class="input-field col-md-12">
+                                    <input type="email" name="email" #email="ngModel"
+                                        [(ngModel)]="userService.selectedUser.email" placeholder="Correo">
+                                </div>
+                                <div class="input-field col-md-12">
+                                    <input type="password" name="password" #password="ngModel"
+                                        [(ngModel)]="userService.selectedUser.password" placeholder="Contraseña">
+                                </div>
+                                <div class="input-field col-md-12">
+                                    <input type="text" name="roles" #name="ngModel"
+                                        [(ngModel)]="userService.selectedUser.roles" placeholder="Rol">
+                                </div>
+                                <div class="input-field col-md-12">
+                                    <input type="text" name="codigo" #codigo="ngModel"
+                                        [(ngModel)]="userService.selectedUser.codigo" placeholder="Codigo">
+                                </div>
+                                <div class="input-field col-md-12">
+                                    <input type="text" name="restaurar" #restaurar="ngModel"
+                                        [(ngModel)]="userService.selectedUser.restaurar" placeholder="restaurar">
+                                </div>
+                                <div class="card-action">
+                                    <div class="input-field col-md-12">
+                                        <button class="btn" >Guardar</button>
+                                        <button class="btn right" (click)="resetForm(userForm)">Limpiar</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-8 ">
+                    <div style="overflow-x:auto;">
+                <table >
+                    <thead >
+
+                        <th class="mayor">Nombre</th>
+                        <th class="mayor">Apellido</th>
+                        <th class="mayor">Correo</th>
+                        <th class="mayor">Rol</th>
+                        <th class="mayor">Codigo</th>
+                        <th class="mayor">Restaurar</th>
+                        <th class="mayor">Acciones</th>
+                    </thead>
+                    <tbody>
+                        <tr class="mayorRow" *ngFor="let user of userService.users">
+
+                            <td >{{ user.name }}</td>
+                            <td>{{ user.lastname }}</td>
+                            <td>{{ user.email }}</td>
+                            <td>{{ user.roles }}</td>
+                            <td>{{ user.codigo }}</td>
+                            <td>{{ user.restaurar }}</td>
+                            
+                            <td>
+                                <a (click)="editUser(user)">
+                                    <i class="material-icons">edit</i>
+                                </a>
+                                <a (click)="deleteUser(user._id)">
+                                    <i class="material-icons">delete</i>
+                                </a>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+        </div>
+
+    </div>

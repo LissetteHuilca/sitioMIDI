@@ -1,0 +1,65 @@
+<div class="fondo">
+	
+	<nav  id="menu" class="nav">
+		<ul>
+			<li>
+				<a  href="#" title="" routerLink="/inicio"><span  class="icon"> <i aria-hidden="true"  class="icon-home"></i></span><span>Inicio</span></a>
+			</li>
+			<li>		
+				<a *ngIf="usserLogged!=undefined" href="#" routerLink="/juegos" title=""><span class="icon"> <i aria-hidden="true" class="icon-portfolio"></i></span><span>Productos</span></a>	
+				<a *ngIf="usserLogged==undefined" href="#" routerLink="/productos" title=""><span class="icon"> <i aria-hidden="true" class="icon-portfolio"></i></span><span>Productos</span></a>	
+			
+			</li>	
+			<li>
+				<a  href="#" routerLink="/nosotros" title=""><span  class="icon"><i  aria-hidden="true" class="icon-team"></i></span><span>Nosotros</span></a>
+			</li>
+			<li>
+				<a  href="#" routerLink="/politicas" title=""><span  class="icon"><i  aria-hidden="true" class="icon-services"></i></span><span>Políticas</span></a>	
+			</li>
+			<li>
+				<a  href="#" routerLink="/contacto" title=""><span  class="icon"><i  aria-hidden="true" class="icon-contact"></i></span><span>Contacto</span></a>	
+			</li>
+			<li *ngIf="usserLogged!=undefined">
+				<a *ngIf="usserLogged.roles === 'usuario'" href="#" routerLink="/usuariomenu" title=""><span  class="icon"><i  aria-hidden="true" class="icon-blog"></i></span><span>Hola, {{usserLogged.name}}</span></a>
+				<a *ngIf="usserLogged.roles === 'administrador'" href="#" routerLink="/usuarios" title=""><span  class="icon"><i  aria-hidden="true" class="icon-blog"></i></span><span>Hola, {{usserLogged.name}}</span></a>
+			</li>
+
+			<li *ngIf="usserLogged==undefined">
+					<a  href="#" routerLink="/user/login" title=""><span  class="icon"><i  aria-hidden="true" class="icon-blog"></i></span><span>Iniciar Sesión</span></a>
+			</li>
+			
+		</ul>
+	</nav>
+	<div id="menu1" class="col-md-12">
+		<div class="row">
+			<div class="col-md-10 router">
+				<router-outlet></router-outlet>
+			</div>
+			<div class="col-md-2 logos">
+					<img class="logoespol" src="../assets/img/espol.png" alt=""><br>
+					<img class="logoespol" src="../assets/img/edcom.png" alt=""><br>
+					<img class="logoespol" src="../assets/img/midi.png" alt=""><br>
+					<img class="logoespol" src="../assets/img/uvs.png" alt="">
+					
+			</div>
+		</div>
+	</div>
+	<footer>
+		<div class="row footer">
+				<div class="col-md-4 ">
+						<img src="../assets/img/midi.png" alt="">
+					</div>
+			<div class="col-md-4 ">
+				<img class="logoespol" src="../assets/img/espol.png" alt="">
+			</div>
+			<div class="col-md-4">
+				<img src="../assets/img/uvs.png" alt="">
+			</div>
+			<div class="col-md-4">
+				<img src="../assets/img/edcom.png" alt="">
+			</div>
+		</div>
+	</footer>
+</div>
+
+

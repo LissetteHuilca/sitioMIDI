@@ -1,0 +1,387 @@
+<div class="row">
+
+
+    <div class="col-md-3">
+        <div class="menuadmin " routerLink="/usuarios">Usuarios</div>
+    </div>
+    <div class="col-md-3">
+        <div class="menuadmin " routerLink="/encuestaAdmin">Encuestas</div>
+    </div>
+    <div class="col-md-3">
+        <div class="menuadmin seleccionado" routerLink="/lineagrafica">Línea gráfica</div>
+    </div>
+    <div class="col-md-3">
+        <div class="cerrar " (click)="cerrarsesion()">Cerrar Sesión</div>
+    </div>
+
+
+</div>
+
+<div class="col s12"><br>
+    <h4 class="title">Encuestas Realizadas: {{ totalEncuestas}}</h4>
+    <br><br>
+    <h3 class="white center">¿Cuántos niños tiene?</h3>
+
+    <div style="overflow-x:auto;">
+        <table>
+            <thead>
+
+                <th>Nombre</th>
+                <th>Apellido</th>
+                <th>Correo</th>
+                <th>Niños a su cargo</th>
+
+
+            </thead>
+            <tbody>
+                <tr class="mayorRow" *ngFor="let encuesta of encuestaService.encuestas">
+
+                    <ng-container *ngFor="let user of userService.users">
+                        <ng-container *ngIf="user._id==encuesta.user_id">
+
+                            <td>{{ user.name }}</td>
+                            <td>{{ user.lastname }}</td>
+                            <td>{{ user.email }}</td>
+                            <td>{{ encuesta.pregunta1 }}</td>
+
+                        </ng-container>
+                    </ng-container>
+                </tr>
+            </tbody>
+        </table>
+
+    </div>
+
+    <br> <br>
+    <br> <br>
+    <hr>
+    <h3 class="white center">¿En qué sector vive?</h3>
+
+
+    <div style="overflow-x:auto;">
+        <table>
+            <thead>
+
+                <th>Sector</th>
+                <th>Realizado por:</th>
+                <th>Correo</th>
+
+
+
+            </thead>
+            <tbody>
+
+                <tr class="mayorRow" *ngFor="let encuesta of encuestaService.encuestas">
+
+                    <ng-container *ngFor="let user of userService.users">
+                        <ng-container *ngIf="user._id==encuesta.user_id">
+
+
+                            <td>{{ encuesta.pregunta2 }}</td>
+                            <td>{{ user.name }}</td>
+                            <td>{{ user.email }}</td>
+
+                        </ng-container>
+                    </ng-container>
+                </tr>
+
+            </tbody>
+        </table>
+    </div>
+    <br> <br>
+    <br> <br>
+    <hr>
+    <h3 class="white center">Indique su nivel de conocimiento en el uso de móviles</h3>
+
+
+    <div style="overflow-x:auto;">
+        <table>
+            <thead>
+                <th>Nulo</th>
+                <th>Básico</th>
+                <th>Medio</th>
+                <th>Avanzado</th>
+
+
+
+            </thead>
+            <tbody>
+                <tr class="mayorRow">
+                    <td>{{ pregunta3nulo}}</td>
+                    <td>{{ pregunta3basico}}</td>
+                    <td>{{ pregunta3medio}}</td>
+                    <td>{{ pregunta3avanzado}}</td>
+                </tr>
+
+                <tr>
+                    <th class="mayorRow2">Total</th>
+                    <th class="mayorRow2">Total</th>
+                    <th class="mayorRow2">Total</th>
+                    <th class="mayorRow2">Total</th>
+                </tr>
+                <tr class="mayorRow">
+                    <td>{{ pregunta3nuloPorcen}}%</td>
+                    <td>{{ pregunta3basicoPorcen}}%</td>
+                    <td>{{ pregunta3medioPorcen}}%</td>
+                    <td>{{ pregunta3avanzadoPorcen}}%</td>
+                </tr>
+            </tbody>
+        </table>
+
+    </div>
+    <br> <br>
+    <br> <br>
+    <hr>
+    <h3 class="white center">¿A su niño le parecieron divertidas las historias de la aplicación?</h3>
+
+    <div style="overflow-x:auto;">
+            <table>
+                <thead>
+                    <th>Bajo</th>
+                    <th>Medio</th>
+                    <th>Alto</th>
+                  
+    
+    
+    
+                </thead>
+                <tbody>
+                    <tr class="mayorRow">
+                        <td>{{ pregunta4bajo}}</td>
+                        <td>{{ pregunta4medio}}</td>
+                        <td>{{ pregunta4alto}}</td>
+                       
+                    </tr>
+    
+                    <tr>
+                        <th class="mayorRow2">Total</th>
+                        <th class="mayorRow2">Total</th>
+                        <th class="mayorRow2">Total</th>
+                       
+                    </tr>
+                    <tr class="mayorRow">
+                   
+                        <td>{{ pregunta4bajoPorcen}}%</td>
+                        <td>{{ pregunta4medioPorcen}}%</td>
+                        <td>{{ pregunta4altoPorcen}}%</td>
+                    </tr>
+                </tbody>
+            </table>
+    
+        </div>
+        <br> <br>
+        <br> <br>
+        <hr>
+   
+
+    <h3 class="white center">¿Cuál de estas aplicaciones le pareció más divertida a su niño?</h3>
+
+    <div style="overflow-x:auto;">
+            <table>
+                <thead>
+                    <th>4 Aventuras Seres</th>
+                    <th>4 Aventuras Escuela</th>
+                    <th>4 Aventuras Animales</th>
+                
+    
+    
+    
+                </thead>
+                <tbody>
+                    <tr class="mayorRow">
+                        <td>{{ pregunta5seres}}</td>
+                        <td>{{ pregunta5escuela}}</td>
+                        <td>{{ pregunta5animales}}</td>
+                       
+                    </tr>
+    
+                    <tr>
+                        <th class="mayorRow2">Total</th>
+                        <th class="mayorRow2">Total</th>
+                        <th class="mayorRow2">Total</th>
+                       
+                    </tr>
+                    <tr class="mayorRow">
+                   
+                        <td>{{ pregunta5seresPorcen}}%</td>
+                        <td>{{ pregunta5escuelaPorcen}}%</td>
+                        <td>{{ pregunta5animalesPorcen}}%</td>
+                    </tr>
+                </tbody>
+            </table>
+    
+        </div>
+        <br> <br>
+        <br> <br>
+        <hr>
+   
+
+    <h3 class="white center">¿Qué parentesco o relación tiene usted con el niño?</h3>
+    <div style="overflow-x:auto;">
+            <table>
+                <thead>
+                    <th>Padre</th>
+                    <th>Madre</th>
+                    <th>Maestro</th>
+                    <th>Terapeuta</th>
+                    <th>Psicólogo</th>
+                    <th>Otro</th>
+    
+    
+    
+                </thead>
+                <tbody>
+                    <tr class="mayorRow">
+                            <td>{{ pregunta6padres}}</td>
+                            <td>{{ pregunta6madres}}</td>
+                            <td>{{ pregunta6maestro}}</td>
+                            <td>{{ pregunta6terapeuta}}</td>
+                            <td>{{ pregunta6psicologo}}</td>
+                            <td>{{ pregunta6otro}}</td>
+                       
+                    </tr>
+    
+                    <tr>
+                        <th class="mayorRow2">Total</th>
+                        <th class="mayorRow2">Total</th>
+                        <th class="mayorRow2">Total</th>
+                        <th class="mayorRow2">Total</th>
+                        <th class="mayorRow2">Total</th>
+                        <th class="mayorRow2">Total</th>
+                       
+                    </tr>
+                    <tr class="mayorRow">
+                            <td>{{ pregunta6padresPorcen}}%</td>
+                            <td>{{ pregunta6madresPorcen}}%</td>
+                            <td>{{ pregunta6maestroPorcen}}%</td>
+                            <td>{{ pregunta6terapeutaPorcen}}%</td>
+                            <td>{{ pregunta6psicologoPorcen}}%</td>
+                            <td>{{ pregunta6otroPorcen}}%</td>
+                    </tr>
+                </tbody>
+            </table>
+    
+        </div>
+        <br> <br>
+        <br> <br>
+        <hr>
+   
+    
+    <h3 class="white center">¿Qué tan intuitiva (fácil de usar) es la aplicación para el niño?</h3>
+
+    <div style="overflow-x:auto;">
+            <table>
+                <thead>
+                    <th>Muy intuitiva</th>
+                    <th>Medio intuitiva</th>
+                    <th>Poco intuitiva</th>
+                
+    
+    
+    
+                </thead>
+                <tbody>
+                    <tr class="mayorRow">
+                        <td>{{ pregunta71}}</td>
+                        <td>{{ pregunta72}}</td>
+                        <td>{{ pregunta73}}</td>
+                       
+                    </tr>
+    
+                    <tr>
+                        <th class="mayorRow2">Total</th>
+                        <th class="mayorRow2">Total</th>
+                        <th class="mayorRow2">Total</th>
+                       
+                    </tr>
+                    <tr class="mayorRow">
+                   
+                        <td>{{ pregunta71Porcen}}%</td>
+                        <td>{{ pregunta72Porcen}}%</td>
+                        <td>{{ pregunta73Porcen}}%</td>
+                    </tr>
+                </tbody>
+            </table>
+    
+        </div>
+        <br> <br>
+        <br> <br>
+        <hr>
+    <h3 class="white center">¿Qué nivel de calidad califica usted la aplicación en cuanto a contenido educativo?</h3>
+    <div style="overflow-x:auto;">
+            <table>
+                <thead>
+                    <th>Alto</th>
+                    <th>Medio</th>
+                    <th>Bajo</th>
+                
+    
+    
+    
+                </thead>
+                <tbody>
+                    <tr class="mayorRow">
+                        <td>{{ pregunta81}}</td>
+                        <td>{{ pregunta82}}</td>
+                        <td>{{ pregunta83}}</td>
+                       
+                    </tr>
+    
+                    <tr>
+                        <th class="mayorRow2">Total</th>
+                        <th class="mayorRow2">Total</th>
+                        <th class="mayorRow2">Total</th>
+                       
+                    </tr>
+                    <tr class="mayorRow">
+                   
+                        <td>{{ pregunta81Porcen}}%</td>
+                        <td>{{ pregunta82Porcen}}%</td>
+                        <td>{{ pregunta83Porcen}}%</td>
+                    </tr>
+                </tbody>
+            </table>
+    
+        </div>
+        <br> <br>
+        <br> <br>
+        <hr>
+    
+    <h3 class="white center">Comentarios</h3>
+
+    <div style="overflow-x:auto;">
+        <table>
+            <thead>
+
+                <th>Comentario</th>
+                <th>Realizado por:</th>
+                <th>Correo</th>
+
+
+
+            </thead>
+            <tbody>
+
+                <tr class="mayorRow" *ngFor="let encuesta of encuestaService.encuestas">
+
+                    <ng-container *ngFor="let user of userService.users">
+                        <ng-container *ngIf="user._id==encuesta.user_id">
+
+
+                            <td>{{ encuesta.pregunta9 }}</td>
+                            <td>{{ user.name }}</td>
+                            <td>{{ user.email }}</td>
+
+                        </ng-container>
+                    </ng-container>
+                </tr>
+
+            </tbody>
+        </table>
+
+    </div>
+ <button (click)="downloadJson()" class="btn btn-primary">Exportar</button>
+
+
+
+</div>

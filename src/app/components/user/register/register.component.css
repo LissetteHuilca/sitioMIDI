@@ -1,0 +1,27 @@
+ .register{
+    padding-bottom: 160px;
+    padding-top: 90px;
+}
+
+.login-user {
+  border-color:#3f6ccc;
+  border-style: solid;
+  border-width: 2px !important; 
+  color: #3f6ccc;
+  text-align: center;
+  transition: all 0.5s;
+  cursor: pointer;
+  height: 45px;
+  margin-top: 10px;
+  padding: .5rem 1rem;
+  font-size: 1.25rem;
+  line-height: 1.5;
+  border-radius: .3rem;
+}
+
+.login-user:hover {
+  background-color: #3f6ccc;
+  color: white;
+  text-decoration: none;
+  cursor:pointer;
+}

@@ -1,0 +1,57 @@
+<section id="login" class="login">
+  <div class="container">
+    <div class="row">
+      <div class="col-xs-12 col-sm-6 col-md-4 mx-auto">
+        <div class="card_login">
+          <div class="card">
+            <div class="card-body text-center">
+
+              <form #formLogin="ngForm" (ngSubmit)="onLogin(formLogin)" *ngIf="showLogin">
+                <h1 class="h3 mb-3 font-weight-normal" *ngIf="!isError">Iniciar Sesión</h1>
+                <div class="alert alert-danger" role="alert" *ngIf="loginError.length > 0">
+                    <div>{{loginError}}</div>           
+                </div>
+                <div class="form-group">
+                  <input type="email" id="email" #email="ngModel" name="email" class="form-control" placeholder="Correo" [(ngModel)]="user.email" required>
+                </div>
+                <div class="alert alert-danger" role="alert" *ngIf="email.touched && !email.valid">
+                    <div *ngIf="email.errors.required">Escriba su correo</div>                    
+                  </div>
+                <div class="form-group">
+                  <input type="password" id="password" #password="ngModel" name="password" class="form-control" placeholder="Contraseña" [(ngModel)]="user.password"
+                    required>
+                </div>
+                <div class="alert alert-danger" role="alert" *ngIf="password.touched && !password.valid">
+                    <div *ngIf="password.errors.required">Escriba la contraseña</div>                    
+                  </div>
+                <button type="submit" class="btn btn-lg btn-primary btn-block btn-login">Iniciar Sesión</button>
+                <div class="form-group">
+                  <a routerLink="/user/register" class="form-control buttonRegis">Registrarse</a>
+                </div> 
+                <div>                    
+                    <button (click)="tooglePasswordRestore()" class="btn btn-lg btn-primary">Olvidaste tu contraseña?</button>
+                  </div>            
+              </form>
+
+              <form #formRestore="ngForm" (ngSubmit)="enviarRestaurar(formRestore)" *ngIf="!showLogin">
+                  <h1 class="h3 mb-3 font-weight-normal" *ngIf="!isError">Restaurar Contraseña</h1>
+                  
+                  <div class="form-group">
+                    <input type="email" id="email" #email="ngModel" name="email" class="form-control" placeholder="Correo" [(ngModel)]="user.email" required>
+                  </div>
+                  <div class="alert alert-danger" role="alert" *ngIf="email.touched && !email.valid">
+                      <div *ngIf="email.errors.required">Escriba su correo</div>                    
+                    </div>
+                    <button type="submit" class="btn btn-lg btn-primary btn-block btn-login">Enviar</button><br>
+                    
+                    <button (click)="tooglePasswordRestore()" class="btn btn-lg btn-primary">Restaurar</button>
+                  
+                </form>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+</section>
+

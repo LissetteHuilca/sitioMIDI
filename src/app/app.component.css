@@ -1,0 +1,63 @@
+html, body {
+    min-width: 100%;
+    height: 100% !important;
+    margin: 0 !important;
+    padding: 0% !important;
+}
+.logos img{
+    width: 200px;
+    margin-top: 10%;
+}
+.logos{
+    height:100%;
+    margin-right: 15px;
+    position:fixed; 
+    right:0;
+    float: right;
+    margin-top: 3%;
+}
+.router{
+    float:right;
+}
+footer img{
+    width: 160px;
+    margin-left: 35%;
+    padding-top: 5%
+}
+footer{
+  width: 99.7%;
+  padding: 5px;
+  
+}
+.footer{
+    display: none;
+}
+
+.fondo{
+background: url("../assets/img/index.jpeg") no-repeat center center fixed;
+-webkit-background-size: cover;
+-moz-background-size: cover;
+-o-background-size: cover;
+background-size: cover;
+height: 100% !important;
+margin: 0;
+background-attachment: fixed;
+  overflow: scroll;
+}
+
+.centrado{
+    align-content: center;
+    padding: 50px;
+    color:white;
+    width: 20px;
+}
+
+#grid[_ngcontent-c2]{
+    display:grid;
+    height:150;
+    grid-template-columns:repeat(1, 1fr);
+    grid-template-rows:300px;
+    grid-column-gap:20px;
+  }
+
+

@@ -1,0 +1,238 @@
+.mayor{
+    align-content: center;
+   
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2); /* this adds the "card" effect */
+
+    text-align: center;
+    background-color: #ddd8d8;
+    color:rgb(0, 0, 0);
+}
+
+.center{
+    align-content: center;
+    text-align: center;
+
+}
+.white{
+    color: white;
+}
+
+.mayorRow2{
+    align-content: center;
+   
+    box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.2); /* this adds the "card" effect */
+    text-align: center;
+    text-align: center;
+    background-color: #ddd8d8;
+    color:rgb(0, 0, 0);
+}
+
+.mayorRow{
+    align-content: center;
+   
+    box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.2); /* this adds the "card" effect */
+    text-align: center;
+   
+    color:rgb(0, 0, 0);
+}
+
+
+.centrado{
+    align-content: center;
+    padding: 50px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2); /* this adds the "card" effect */
+    padding: 16px;
+    text-align: center;
+    background-color: #f1f1f1;
+    color:rgb(0, 0, 0);
+}
+
+
+
+.menuadmin:hover{
+    cursor: pointer;
+    font-size: 22px;
+    background: green;
+}
+
+  input[type=text] {
+    width: 100%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    box-sizing: border-box;
+    border: none;
+    border-bottom: 2px solid green;
+  }
+  input[type=number] {
+ 
+    padding: 12px 20px;
+    margin-left: 15px;
+    box-sizing: border-box;
+    border: none;
+    border-bottom: 2px solid green;
+  }
+
+  .title {
+    border: none;
+    text-align: center;
+    color: white;
+    padding: 16px 32px;
+    text-decoration: none;
+    margin: 4px 2px;
+    font-size: 28px;
+    font-weight: bold;
+   
+  }
+
+ .btn {
+  background-color: #4CAF50;
+  border: none;
+  color: white;
+  padding: 16px 32px;
+  text-decoration: none;
+  margin: 4px 2px;
+  cursor: pointer;
+}
+  
+
+.menuadmin{
+    background: #5EAF42;
+    color: white;
+    height: 60px;
+    font-size: 20px;
+    text-align: center;
+    padding: 10px;
+    border-radius: 8px;
+    margin:10px;
+}
+.card {
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2); /* this adds the "card" effect */
+    padding: 10px;
+    text-align: center;
+    background-color: #f1f1f144;
+    align-content: center;
+ 
+  }
+  
+  .card:hover {
+    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+  }
+  
+.preguntasNumber
+{
+    float: left;
+    font-size: 18px;
+    color: aliceblue;
+  }
+
+  .preguntas
+{
+   
+    font-size: 18px;
+    color: aliceblue;
+  }
+
+   /* The container must be positioned relative: */
+.custom-select {
+ 
+    font-family: Arial;
+  }
+  
+  .custom-select select {
+    display: none; /*hide original SELECT element: */
+  }
+  
+  .select-selected {
+    background-color: DodgerBlue;
+  }
+  
+  /* Style the arrow inside the select element: */
+  .select-selected:after {
+    position: absolute;
+    content: "";
+    top: 14px;
+    right: 10px;
+    width: 0;
+    height: 0;
+    border: 6px solid transparent;
+    border-color: #fff transparent transparent transparent;
+  }
+  
+  /* Point the arrow upwards when the select box is open (active): */
+  .select-selected.select-arrow-active:after {
+    border-color: transparent transparent #fff transparent;
+    top: 7px;
+  }
+  
+  /* style the items (options), including the selected item: */
+  .select-items div,.select-selected {
+    color: #ffffff;
+    padding: 8px 16px;
+    border: 1px solid transparent;
+    border-color: transparent transparent rgba(0, 0, 0, 0.1) transparent;
+    cursor: pointer;
+  }
+  
+  /* Style items (options): */
+  .select-items {
+    position: absolute;
+    background-color: DodgerBlue;
+    top: 100%;
+    left: 0;
+    right: 0;
+    z-index: 99;
+  }
+  
+  /* Hide the items when the select box is closed: */
+  .select-hide {
+    display: none;
+  }
+  
+  .select-items div:hover, .same-as-selected {
+    background-color: rgba(0, 0, 0, 0.1);
+  } 
+  .cerrar{
+
+    margin: 10px;
+    background:transparent;
+    height: 60px;
+    padding: 10px;
+    border-radius: 8px;
+    text-align: center;
+    color: white;
+    border:2px solid  rgb(233, 147, 26);
+    font-size: 20px;
+}
+.cerrar:hover{
+    background: orange;
+    color:  white;
+    transition: all 0.5s;
+    font-size: 22px;
+    cursor:pointer;
+    border:1px solid white;
+}
+table {
+    border-collapse: collapse;
+    width: 100%;
+    
+  }
+  
+  th, td {
+    text-align: center;
+    padding: 8px;
+  }
+  
+  tr:nth-child(even){background-color: #f2f2f2}
+  hr { 
+    display: block;
+    margin-top: 0.5em;
+    margin-bottom: 0.5em;
+    margin-left: auto;
+    margin-right: auto;
+    border-style: inset;
+    border-width: 1px;
+  } 
+  th {
+    background-color: #4CAF50;
+    color: white;
+  }

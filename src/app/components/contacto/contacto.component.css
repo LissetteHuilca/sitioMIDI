@@ -1,0 +1,72 @@
+.divContacto{
+    padding:  30px
+}
+
+.design{
+    padding: 10px !important;
+    background: rgb(27, 54, 71);
+    align-content: center;
+    text-align: center;
+    border-radius: 15px;
+    margin: 5px;
+    }
+    
+.divContacto .col-md-3{
+    font-display: center;
+    padding: 20px !important;
+    background: rgb(27, 54, 71);
+    margin: 45px;
+    height: 160px;
+    align-content: center;
+    text-align: center;
+    border-radius: 15px;
+}
+
+.format{
+   margin-top: 80px;
+}
+
+.divContacto a{
+    color: orange !important
+}
+.divContacto h5{
+ font-weight: bold;
+
+ color: white
+}
+.divContacto p{
+    color: white;
+    font-size: 16px;
+}
+.direccion h4{
+    color: white;
+    font-weight: bold
+}
+.direccion{
+    padding-top: 6%;
+    
+}
+.direccion p{
+    font-size: 16px;
+    color: white;
+    
+}
+.mencionContacto p{
+    font-size: 22px;
+    text-align: center;
+    font-family: fantasy;
+    color: white;
+    font-style: italic
+}
+.total{
+    width: 100%;
+    padding: 0
+}
+.button1{
+    color:white;
+    background-color: orange;
+
+}
+.h1{
+    color:white;  
+}

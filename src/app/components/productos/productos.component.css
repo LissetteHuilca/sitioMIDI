@@ -1,0 +1,59 @@
+
+.logo-cuatroface{
+    margin-right: auto;
+    margin-left: auto; 
+    float: center;
+    margin-top: 20px;
+    width: 100%;
+}
+.estilo{
+    color:white;
+    padding: 50px;
+    font-size: 18px;
+}
+
+
+.overlay-right[_ngcontent-c2]{
+    background-color: saddlebrown !important
+}
+.parrots{
+    text-align: left;
+    float: left;
+    float: center;
+    width: 40%;
+}
+
+.parrot{
+    text-align: right;
+    float: right;
+    width: 30%;
+}
+
+.mt-4{
+    margin-right: auto;
+    margin-left: auto; 
+    float: center;
+    width: 500px;
+}
+
+.iconoP{
+    width: 230px;
+}
+
+.productos{
+    margin-right: auto;
+    margin-left: auto; 
+    text-align: center;
+    float: center;
+    margin-top: 20px;
+}
+
+.prueba{
+  
+    text-align: center;
+    margin-right: auto;
+    margin-left: auto; 
+    float: center;
+    margin-top: 20px;
+   
+}

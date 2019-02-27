@@ -1,0 +1,146 @@
+.mayor{
+    align-content: center;
+   
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2); /* this adds the "card" effect */
+
+    text-align: center;
+    background-color: #ddd8d8;
+    color:rgb(0, 0, 0);
+}
+
+
+.mayorRow{
+    align-content: center;
+   
+    box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.2); /* this adds the "card" effect */
+    text-align: center;
+   
+    color:rgb(0, 0, 0);
+}
+.contUsers{
+  margin-top: 50px
+}
+
+.centrado{
+    align-content: center;
+    padding: 50px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2); /* this adds the "card" effect */
+    padding: 16px;
+    text-align: center;
+    background-color: #f1f1f1;
+    color:rgb(0, 0, 0);
+}
+
+
+
+.menuadmin:hover{
+    cursor: pointer;
+    font-size: 22px;
+    background: green;
+}
+input {
+    width: 100%;
+  }
+  input[type=text] {
+    width: 100%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    box-sizing: border-box;
+    border: none;
+    border-bottom: 2px solid green;
+  }
+
+  input[type=email] {
+    width: 100%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    box-sizing: border-box;
+    border: none;
+    border-bottom: 2px solid green;
+  }
+
+  .title {
+    background-color: rgb(134, 212, 137);
+    border: none;
+    color: white;
+    padding: 16px 32px;
+    text-decoration: none;
+    margin: 4px 2px;
+   
+  }
+
+ .btn {
+  background-color: #4CAF50;
+  border: none;
+  color: white;
+  padding: 16px 32px;
+  text-decoration: none;
+  margin: 4px 2px;
+  cursor: pointer;
+}
+  input[type=password] {
+    width: 100%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    box-sizing: border-box;
+    border: none;
+    border-bottom: 2px solid green;
+  }
+
+  table {
+    border-collapse: collapse;
+    border-spacing: 0;
+    width: 100%;
+    border: 1px solid #ddd;
+    background-color: #f1f1f144;
+  }
+.menuadmin{
+    background: #5EAF42;
+    color: white;
+    height: 60px;
+    font-size: 20px;
+    text-align: center;
+    padding: 10px;
+    border-radius: 8px;
+    margin:10px;
+}
+.card {
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2); /* this adds the "card" effect */
+    padding: 10px;
+    text-align: center;
+    background-color: #f1f1f144;
+ 
+  }
+  
+  .card:hover {
+    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+  }
+  
+.seleccionado{
+    background: green !important;
+}
+th, td {
+    padding: 8px;
+    text-align: left;
+  }
+
+.cerrar{
+
+    margin: 10px;
+    background:transparent;
+    height: 60px;
+    padding: 10px;
+    border-radius: 8px;
+    text-align: center;
+    color: white;
+    border:2px solid  rgb(233, 147, 26);
+    font-size: 20px;
+}
+.cerrar:hover{
+    background: orange;
+    color:  white;
+    transition: all 0.5s;
+    font-size: 22px;
+    cursor:pointer;
+    border:1px solid white;
+}

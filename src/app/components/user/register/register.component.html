@@ -1,0 +1,71 @@
+<section id="register" class="register">
+<div class="container">
+    <div class="row">
+      
+      <div class="col-xs-12 col-sm-6 col-md-4 mx-auto">
+        <div class="card_register">
+          <div class="card">
+              
+            <div class="card-body text-center">
+              
+              <form #formRegister="ngForm" (ngSubmit)="onRegister(formRegister)">
+                <h1 class="h3 mb-3 font-weight-normal">Registro</h1>
+                <div class="alert alert-danger" role="alert" *ngIf="isError">
+                    {{msgError}}
+                </div>
+                <div class="form-group">
+                    <div class="form-group">
+                        <input type="text" #name="ngModel" name="name" class="form-control" placeholder="Nombre" [(ngModel)]="user.name" required minlength="3"
+                          maxlength="15">
+                      </div>  
+                <div class="alert alert-danger" role="alert" *ngIf="name.touched && !name.valid">
+                  <div *ngIf="name.errors.required">Escriba el nombre</div>
+                  <div *ngIf="name.errors.minlength">Texto muy corto</div>
+                </div>        
+
+                <div class="form-group">
+                  <input type="text" #lastname="ngModel" name="lastname" class="form-control" placeholder="Apellido" [(ngModel)]="user.lastname" required minlength="3"
+                    maxlength="15">
+                </div>
+                <div class="alert alert-danger" role="alert" *ngIf="lastname.touched && !lastname.valid">
+                  <div *ngIf="lastname.errors.required">Escriba el apellido</div>
+                  <div *ngIf="lastname.errors.minlength">Texto muy corto</div>
+                </div>
+
+                <div class="form-group">
+                  <input type="email" #email="ngModel" name="email" class="form-control" placeholder="Correo" [(ngModel)]="user.email" required
+                    minlength="8">
+                </div>
+                <div class="alert alert-danger" role="alert" *ngIf="email.touched && !email.valid">
+                  <div *ngIf="email.errors.required">Escriba el correo</div>
+                  <div *ngIf="email.errors.minlength">El correo debe tener más de 8 letras</div>
+                </div>
+
+                <div class="form-group">
+                  <input type="password" #password="ngModel" name="password" class="form-control" placeholder="Contraseña" [(ngModel)]="user.password"
+                    required minlength="5" maxlength="10">
+                </div>
+                <div class="alert alert-danger" role="alert" *ngIf="password.touched && !password.valid">
+                  <div *ngIf="password.errors.required">Escriba la contraseña</div>
+                  <div *ngIf="password.errors.minlength">La contraseña debe tener más de 5 letras</div>
+                </div>
+                
+
+                <button type="submit" class="btn btn-lg btn-primary btn-block">Registrarse</button>
+               
+                <a routerLink ='/user/login' class="form-control login-user">Iniciar Sesión</a>
+                
+              </div>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+
+
+

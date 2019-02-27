@@ -1,0 +1,83 @@
+.center{
+    align-content: center;
+    text-align: center;
+
+}
+.white{
+    color: white;
+}
+.lineagrafica h2{
+    color: white;
+    text-align: center; 
+    margin-top: 20px;
+}
+.menuadmin .col-md-3{
+    width: 90%;
+    background: #5EAF42;
+    color: white;
+    height: 60px;
+    font-size: 20px;
+    text-align: center;
+    padding-top: 15px;
+    border-radius: 8px;
+    margin: 0px 15px;
+}
+.menuadmin .col-md-3:hover{
+    cursor: pointer;
+    font-size: 22px;
+    background: green;
+}
+
+.menuadmin{
+    margin: 15px 50px;
+}
+
+.seleccionado{
+    background: green !important;
+}
+
+.menuadmin{
+    background: #5EAF42;
+    color: white;
+    height: 60px;
+    font-size: 20px;
+    text-align: center;
+    padding: 10px;
+    border-radius: 8px;
+    margin:10px;
+}
+.card {
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2); /* this adds the "card" effect */
+    padding: 16px;
+    text-align: center;
+    background-color: #f1f1f1;
+  }
+  
+  .card:hover {
+    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+  }
+  
+.seleccionado{
+    background: green !important;
+}
+
+.cerrar{
+
+    margin: 10px;
+    background:transparent;
+    height: 60px;
+    padding: 10px;
+    border-radius: 8px;
+    text-align: center;
+    color: white;
+    border:2px solid  rgb(233, 147, 26);
+    font-size: 20px;
+}
+.cerrar:hover{
+    background: orange;
+    color:  white;
+    transition: all 0.5s;
+    font-size: 22px;
+    cursor:pointer;
+    border:1px solid white;
+}

@@ -1,0 +1,100 @@
+
+  <br><br><h1 class="white center">Encuesta de personajes</h1>
+
+  <br><br>
+
+<h2 class="center white"> Selecciona la Loli que más te guste</h2>
+<br>
+<form #lineagraficaencuestaForm="ngForm" (ngSubmit)="addLineaGrafica(lineagraficaencuestaForm)">
+  <div class="row">
+  
+    <div class="col-md-4 center">
+      <img src="../../../assets/img/loli1.png" alt="" width="300px" class="loli1" onclick="selectedAnswer1(this)" (click)="seleccionarLoli('1')">
+      
+    </div>
+
+    <div class="col-md-4 center">
+        <img src="../../../assets/img/loli2.png" alt="" width="300px" class="loli2" onclick="selectedAnswer1(this)" (click)="seleccionarLoli('2')">
+    </div>
+
+    <div class="col-md-4 center">
+        <img src="../../../assets/img/loli3.png" alt="" width="300px" class="loli3" onclick="selectedAnswer1(this)" (click)="seleccionarLoli('3')">
+    </div>
+    <input type="hidden" id="loli" name="loli" #loli="ngModel" [(ngModel)]="linea.loli" >
+                        
+  </div>
+  
+
+  <br><br><br>
+
+  <h2 class="center white"> Seleccione la tonalidad de verde que más te agrade para Loli</h2>
+  <br>
+  <div class="row">
+  
+    <div class="col-md-4 center">
+      <img src="../../../assets/img/color1.png" alt="" width="300px" class="item21" onclick="selectedAnswer2(this)" (click)="seleccionarColor('1')">
+    </div>
+
+    <div class="col-md-4 center">
+        <img src="../../../assets/img/color2.png" alt="" width="300px" class="item22" onclick="selectedAnswer2(this)" (click)="seleccionarColor('2')"> 
+    </div>
+
+    <div class="col-md-4 center">
+        <img src="../../../assets/img/color3.png" alt="" width="300px" class="item23" onclick="selectedAnswer2(this)" (click)="seleccionarColor('3')">
+    </div>
+    <input type="hidden" id="color" name="color" #color="ngModel" [(ngModel)]="linea.color">
+  </div>
+
+  <br><br><br>
+
+  <h2 class="center white"> Seleccione el personaje que más te guste</h2>
+  <br>
+  <div class="row">
+  
+    <div class="col-md-6 center">
+      <img src="../../../assets/img/niño.png" alt="" width="300px" class="item31" onclick="selectedAnswer3(this)" (click)="seleccionarBoy('1')">
+    </div>
+
+    <div class="col-md-6 center">
+        <img src="../../../assets/img/niñoanterior.png" alt="" width="300px" class="item32" onclick="selectedAnswer3(this)" (click)="seleccionarBoy('2')"> 
+    </div>
+    <input type="hidden" id="boy" name="boy" #boy="ngModel" [(ngModel)]="linea.boy">
+  </div>
+
+  <br><br><br>
+
+  <h2 class="center white"> Seleccione el personaje que más te guste</h2>
+  <br>
+  <div class="row">
+  
+    <div class="col-md-6 center">
+      <img src="../../../assets/img/niña.png" alt="" width="300px" class="item41" onclick="selectedAnswer4(this)" (click)="seleccionarGirl('1')">
+    </div>
+
+    <div class="col-md-6 center">
+        <img src="../../../assets/img/niñaanterior.png" alt="" width="300px" class="item42" onclick="selectedAnswer4(this)" (click)="seleccionarGirl('2')">
+    </div>
+    <input type="hidden" id="girl" name="girl" #girl="ngModel" [(ngModel)]="linea.girl">
+  </div>
+
+  <br><br><br>
+
+  <h2 class="center white"> Seleccione el fondo que más te guste</h2>
+  <br>
+  <div class="row">
+  
+    <div class="col-md-6 center">
+      <img src="../../../assets/img/fondoactual.png" alt="" width="300px" class="item51" onclick="selectedAnswer5(this)" (click)="seleccionarBack('1')">
+    </div>
+
+    <div class="col-md-6 center">
+        <img src="../../../assets/img/fondoanterior.png" alt="" width="300px" class="item52" onclick="selectedAnswer5(this)"(click)="seleccionarBack('2')">
+    </div>
+    <input type="hidden" id="background" name="background" #background="ngModel" [(ngModel)]="linea.background">
+  </div><br><br><br>
+  <div class="col-md-12" style="text-align:center">
+      <button class="btn cerrar" onclick="javascript:window.open('', '_self', '');window.close();">Guardar</button>
+      <br><br>
+  </div>
+
+</form>

@@ -1,0 +1,105 @@
+
+<div class="row">
+
+
+
+
+    <div class="container ">
+
+        <div class="row">
+
+            <div class="col-md-12">
+
+                <div class="card">
+                    <h4 class="title">Encuesta</h4>
+                    <div>
+                        <form #encuestaForm="ngForm" (ngSubmit)="addEncuesta(encuestaForm)">
+                            <input type="hidden" name="user_id" ng-model="user_id" ngModel value="usserLogged._id">
+
+                            <br><label class="preguntas">¿Cuántos niños tiene?</label>
+                            <input type="number" min="1" max="10" name="pregunta1" ngModel #pregunta1="ngModel" required><br>
+                            <div class="campo" *ngIf="pregunta1.errors">
+                                Campo obligatorio.
+                            </div><br>
+
+                            <br><label class="preguntas">¿En qué sector vive?</label>
+                            <input class="span1 form-control" type="text" name="pregunta2" required ngModel ng-model="pregunta2">
+                            
+
+                            <br><label class="preguntas">Indique su nivel de conocimiento en el uso de móviles</label>
+                            <select class="custom-select" name="pregunta3" ngModel #pregunta3="ngModel" ng-model="pregunta3" required>
+                                <option value="nulo">Nulo</option>
+                                <option value="basico" ng-selected="true">Básico</option>
+                                <option value="medio">Medio</option>
+                                <option value="avanzado">Avanzado</option>
+                            </select>
+                            <div class="campo" *ngIf="pregunta3.errors">
+                                Campo obligatorio.
+                            </div><br>
+
+                            <br><label class="preguntas">A su niño le parecieron divertidas las historias de la
+                                aplicación</label>
+                            <select class="custom-select" name="pregunta4" required ngModel #pregunta4="ngModel" ng-model="pregunta4">
+                                <option value="bajo" ng-selected="true">Bajo</option>
+                                <option value="medio">Medio</option>
+                                <option value="alto">Alto</option>
+                            </select>
+                            <div class="campo" *ngIf="pregunta4.errors">
+                                Campo obligatorio.
+                            </div><br>
+
+                            <br><label class="preguntas">¿Cuál de estas aplicaciones le pareció más divertida a su
+                                niño?</label>
+                            <select class="custom-select" name="pregunta5" required ngModel #pregunta5="ngModel" ng-model="pregunta5"> 
+                                <option value="seres">4 Aventuras- seres</option>
+                                <option value="escuela" ng-selected="true">4 Aventuras- Escuela</option>
+                                <option value="animales">4 Aventuras - Animales</option>
+                            </select>
+                            <div class="campo" *ngIf="pregunta5.errors">
+                                Campo obligatorio.
+                            </div><br>
+
+                            <br><label class="preguntas">¿Qué parentesco o relación tiene usted con el niño?</label>
+                            <select class="custom-select" name="pregunta6" required ngModel #pregunta6="ngModel" ng-model="pregunta6">
+                                <option value="padres">Padre de Familia</option>
+                                <option value="madres">Madre de Familia</option>
+                                <option value="maestro" ng-selected="true">Maestro/a</option>
+                                <option value="terapeuta">Terapeuta</option>
+                                <option value="psicologo">Psicólogo</option>
+                                <option value="otro">Otro</option>
+                            </select>
+                            <div class="campo" *ngIf="pregunta6.errors">
+                                Campo obligatorio.
+                            </div><br>
+
+                            <br><label class="preguntas">¿Qué tan intuitiva (fácil de usar) es la aplicación para el
+                                niño?</label>
+                            <select class="custom-select" name="pregunta7" required ngModel #pregunta7="ngModel" ng-model="pregunta7">
+                                <option value="1">Muy Intuitiva</option>
+                                <option value="2" ng-selected="true">Medio Intuitiva</option>
+                                <option value="3">Poco Intuitiva</option>
+                            </select>
+                            <div class="campo" *ngIf="pregunta7.errors">
+                                Campo obligatorio.
+                            </div><br>
+
+                            <br><label class="preguntas">¿Qué nivel de calidad califica usted la aplicación en cuanto a
+                                contenido educativo?</label>
+                            <select class="custom-select" name="pregunta8" required ngModel #pregunta8="ngModel" ng-model="pregunta8">
+                                <option value="1">Alto</option>
+                                <option value="2" ng-selected="true">Medio</option>
+                                <option value="3">Bajo</option>
+                            </select>
+                            <div class="campo" *ngIf="pregunta8.errors">
+                                Campo obligatorio.
+                            </div><br>
+
+                            <br><label class="preguntas">Escriba aquí su comentario o sugerencia para mejorar la
+                                aplicación.</label>
+                            <textarea class="span1 form-control" rows="6" name="pregunta9" required ngModel ng-model="pregunta9"></textarea><br>
+                            
+                            <button class="btn" style="margin-left: 2px">Enviar</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
