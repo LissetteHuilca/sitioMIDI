@@ -17,7 +17,7 @@ import { EncuestaAdminComponent } from './components/encuesta-admin/encuesta-adm
 import { RestoreComponent } from './components/user/restore/restore.component';
 
 export const routes: Routes = [
-  {path: 'restore', component: RestoreComponent},
+  {path: 'restore/:codigo', component: RestoreComponent},
   {path: 'juegos', component: JuegosComponent},
   {path: 'lineagraficaencuesta', component: LineagraficaencuestaComponent},
   {path: 'lineagrafica', component: LineagraficasComponent},
@@ -25,7 +25,7 @@ export const routes: Routes = [
   {path: 'usuarios', component: UsuariosComponent},
   {path: 'user/register', component: RegisterComponent},
   {path: 'user/login', component: LoginComponent},
-   {path: '', component: ProductosComponent},
+  {path: '', component: ProductosComponent},
   {path: 'inicio', component: ProductosComponent},
   {path: 'nosotros', component: NosotrosComponent},
   {path: 'politicas', component: PoliticasComponent},

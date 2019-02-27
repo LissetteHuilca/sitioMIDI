@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { User } from 'src/app/models/user';
-import { Router } from '@angular/router';
+import { Router, ActivatedRoute } from '@angular/router';
 import { NgForm } from '@angular/forms/src/directives/ng_form';
 import { AuthService } from 'src/app/services/auth.service';
 import { Location } from '@angular/common';
@@ -13,17 +13,25 @@ import { Location } from '@angular/common';
 })
 export class RestoreComponent implements OnInit {
 
-  constructor(private authService: AuthService, private router: Router, private location: Location ) { }
+
+
+  constructor(private authService: AuthService, private router: Router, private location: Location, private route: ActivatedRoute ) { }
   public isError = false;
   public msgError = '';
 
   user = {
     password: '',
-    confirmPass: ''
+    confirmPass: '',
+    codigo: this.route.snapshot.paramMap.get('codigo')
   }
 
   ngOnInit() {
-    
+    console.log('codigo', this.user.codigo);
+    if(this.user.codigo){
+      this.router.navigate(['/restore/user']);
+    }else{
+      this.router.navigate(['/inicio']);
+    }
   }
 
   changePassword(form: NgForm) {
@@ -31,17 +39,14 @@ export class RestoreComponent implements OnInit {
           this.authService
             .passwordUser(this.user)
             .subscribe(user => {
-
               console.log(user);
-              
               setTimeout(() => {
                 this.router.navigate(['/user/login']);
               }, 500);
-
               ///location.reload();
             },
             res => {
-              this.msgError = "Usuario ya existe";
+              this.msgError = "La contraseña ya fue actualizada";
               console.log(res);
               this.onIsError();
             });
@@ -57,5 +62,6 @@ onIsError(): void {
     this.isError = false;
   }, 4000);
 }
+
 
 }

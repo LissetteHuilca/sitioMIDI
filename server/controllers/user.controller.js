@@ -28,6 +28,11 @@ userCtrl.getUser = async (req, res) => {
     res.json(user);
 }
 
+userCtrl.getUserCod = async (req, res) => {
+    const user = await User.findOne(req.params.codigo);
+    res.json(user);
+}
+
 userCtrl.editUser = async (req, res) => {
     const { id } = req.params;
     const user = {

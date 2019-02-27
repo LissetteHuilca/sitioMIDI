@@ -48,7 +48,6 @@ export class EncuestaComponent implements OnInit {
     getLogged(){
       console.log(this.authService.getUserLoggedIn());
       this.usserLogged=JSON.parse(this.authService.getUserLoggedIn());
-      //console.log("Userlogger",this.usserLogged._id);
       
     }
 

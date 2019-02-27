@@ -13,6 +13,8 @@ export class AuthService {
   private isUserLoggedIn;
   public usserLogged:Users;
 
+  public userCod:Users;
+
   constructor(private http: HttpClient) {this.isUserLoggedIn = false; }
 
   headers: HttpHeaders = new HttpHeaders({
@@ -44,8 +46,19 @@ setUserLoggedIn(user:Users) {
   localStorage.setItem('currentUser', JSON.stringify(user));
 }
 
+
 getUserLoggedIn() {
   return localStorage.getItem('currentUser');
+}
+
+setCodigoPass(user:Users) {
+  this.userCod = user;
+  localStorage.setItem('currentCod', JSON.stringify(user));
+  console.log(user);
+}
+
+getCodigoPass() {
+  return localStorage.getItem('currentCod');
 }
 
 logoutUser() {

@@ -29,3 +29,16 @@
     text-decoration: none;
     cursor:pointer;
   }
+
+  .enlace {
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+    text-decoration: underline;
+  }
+  
+  .enlace:hover {
+    text-decoration:none;
+    color: grey;
+    cursor:pointer;
+  }

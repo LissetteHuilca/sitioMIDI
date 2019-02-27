@@ -29,7 +29,7 @@
                   <a routerLink="/user/register" class="form-control buttonRegis">Registrarse</a>
                 </div> 
                 <div>                    
-                    <button (click)="tooglePasswordRestore()" class="btn btn-lg btn-primary">Olvidaste tu contraseña?</button>
+                    <button (click)="tooglePasswordRestore()" class="btn enlace">¿Olvidaste tu contraseña?</button>
                   </div>            
               </form>
 
@@ -43,8 +43,7 @@
                       <div *ngIf="email.errors.required">Escriba su correo</div>                    
                     </div>
                     <button type="submit" class="btn btn-lg btn-primary btn-block btn-login">Enviar</button><br>
-                    
-                    <button (click)="tooglePasswordRestore()" class="btn btn-lg btn-primary">Restaurar</button>
+                    <button (click)="tooglePasswordRestore()" class="btn enlace">Cancelar</button>
                   
                 </form>
               </div>

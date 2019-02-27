@@ -112,15 +112,20 @@ const transporter = nodemailer.createTransport({
 
 
 authCtrl.changePass = async (req, res) => {
-    let user = await User.find({restaurar: true});
+    let user = await User.findOne({codigo: req.body.codigo});
    
              
-    if(user.codigo == 'x39iwzdsoo'){
+    if(user){
+
+        if(user.restaurar == true){
         user.password = req.body.password;
+        user.restaurar = false;
+        user.codigo = '';
         user.save().then(() => {
             res.json(user)
-            console.log('pASS', user);
         });
+    }
+
     } else {
         res.json(302, {
             'status': 'No esta registrado'
