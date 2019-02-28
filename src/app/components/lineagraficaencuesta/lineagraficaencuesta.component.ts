@@ -21,11 +21,8 @@ export class LineagraficaencuestaComponent implements OnInit {
    
   }
   addLineaGrafica(form: NgForm) {
-    console.log("holi ", form.value);
     this.lineagraficaencuestaService.postLineagrafica(form.value)
       .subscribe(res => {
-        //this.resetForm(form);
-        console.log('Save succesfully');
      window.open("inicio","_self","")
      
        

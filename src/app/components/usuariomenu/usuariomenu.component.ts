@@ -21,7 +21,6 @@ export class UsuariomenuComponent implements OnInit {
     this.estadolinea=false;
     this.usserLogged=JSON.parse(localStorage.getItem("currentUser"));
     if(this.usserLogged!=null){
-      console.log("miau",this.usserLogged.estadolineagrafica);
       if(this.usserLogged.estadolineagrafica=="si"){
         this.estadolinea=true;
       }
@@ -47,19 +46,12 @@ export class UsuariomenuComponent implements OnInit {
     this.encuestaService.getEncuestas()
       .subscribe(res => {
         this.encuestaService.encuestas = res as Encuesta[];
-        console.log('getEncuesta', res);
         this.encuestaService.encuestas.forEach(element => {
           if(this.usserLogged._id==element.user_id){
             this.encuesta=true;
-            console.log("entro");
           }
         });
       });
   }
 
- /* searchEncuesta() {
- 
-      return window.open("encuesta","_self","")
-  
-    }*/
 }

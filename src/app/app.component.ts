@@ -17,9 +17,7 @@ export class AppComponent implements OnInit {
   }
 
   getLogged(){
-    console.log(this.authService.getUserLoggedIn());
     this.usserLogged=JSON.parse(this.authService.getUserLoggedIn());
-    console.log("Userlogger",this.usserLogged.roles);
     
   }
   title = 'proyectoscrum';

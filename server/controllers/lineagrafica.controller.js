@@ -21,10 +21,8 @@ lineagraficaCtrl.createLineagrafica = async (req, res) => {
 };
 
 lineagraficaCtrl.getLineagrafica = async (req, res) => {
-    //console.log(req.params.id);
     const lineagrafica = await Lineagrafica.findById(req.params.id);
     res.json(lineagrafica);
-    //res.json('received');
 }
 
 lineagraficaCtrl.editLineagrafica = async (req, res) => {

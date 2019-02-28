@@ -22,7 +22,6 @@ export class AuthService {
 });
 
 registerUser(user: any) {
-  console.log("Usuario Register ", user);
   const url_api = "http://localhost:3000/auth/register";
 
   return this.http.post(url_api, user);
@@ -34,7 +33,6 @@ loginuser(email: string, password: string): Observable<any> {
 }
 
 passwordUser(password: any) {
-  console.log("Cambio contraseña", password);
   const url_api = "http://localhost:3000/auth/changePass";
   
   return this.http.post(url_api, password);
@@ -54,7 +52,6 @@ getUserLoggedIn() {
 setCodigoPass(user:Users) {
   this.userCod = user;
   localStorage.setItem('currentCod', JSON.stringify(user));
-  console.log(user);
 }
 
 getCodigoPass() {
@@ -62,11 +59,6 @@ getCodigoPass() {
 }
 
 logoutUser() {
-  /*let accessToken = localStorage.getItem("accessToken");
-  const url_api = `http://localhost:3000/user/logout?access_token=${accessToken}`;
-  localStorage.removeItem("accessToken");
-  localStorage.removeItem("currentUser");
-  return this.htttp.post<Users>(url_api, { headers: this.headers });*/
   localStorage.removeItem("currentUser");
 }
 }

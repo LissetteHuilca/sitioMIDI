@@ -37,16 +37,11 @@ export class EncuestaComponent implements OnInit {
     form.value.user_id = this.usserLogged._id
     this.encuestaService.postEncuesta(form.value)
       .subscribe(res => {
-       // M.toast({html: 'Enviado'});
-       console.log(form.value);
-       console.log('Save succesfully');
-       //window.close();
        window.open("inicio","_self","")
       });
     }
   
     getLogged(){
-      console.log(this.authService.getUserLoggedIn());
       this.usserLogged=JSON.parse(this.authService.getUserLoggedIn());
       
     }

@@ -175,26 +175,10 @@ export class EncuestaAdminComponent implements OnInit {
     this.encuestaService.getEncuestas()
       .subscribe(res => {
         this.encuestaService.encuestas = res as Encuesta[];
-        console.log('getEncuesta', res);
+        
         this.totalEncuestas = this.encuestaService.encuestas.length;
         this.encuestaService.encuestas.forEach(element => {
-        /*  switch (element.pregunta2) {
-            case "norte":
-              this.pregunta2Norte++;
-              this.pregunta2NortePorcen = this.getPorcentaje(this.pregunta2Norte);
-              break;
-            case "centro":
-              this.pregunta2Centro++;
-              this.pregunta2CentroPorcen = this.getPorcentaje(this.pregunta2Centro);
-              break;
-            case "sur":
-              this.pregunta2Sur++;
-              this.pregunta2SurPorcen = this.getPorcentaje(this.pregunta2Sur);
-              break;
-            default:
-              break;
-          }*/
-
+        
           //pregunta3
           switch (element.pregunta3) {
             case "nulo":
@@ -333,14 +317,12 @@ export class EncuestaAdminComponent implements OnInit {
     this.encuestaService.getEncuestas()
       .subscribe(res => {
         this.encuestaService.encuestas = res as Encuesta[];
-        console.log(res);
       });
   }
   getUsuarios() {
     this.userService.getUsers()
       .subscribe(res => {
         this.userService.users = res as User[];
-        console.log('getUser', res);
       });
   }
 

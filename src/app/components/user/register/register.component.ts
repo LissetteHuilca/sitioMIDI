@@ -32,16 +32,12 @@ export class RegisterComponent implements OnInit {
       this.authService
         .registerUser(this.user)
         .subscribe(user => {
-          /*this.authService.setUser(user);
-          const token = user.id;
-          this.authService.setToken(token);*/
           this.authService.setUserLoggedIn(user);
           this.router.navigate(['/juegos']);
           location.reload();
         },
         res => {
           this.msgError = "Usuario ya existe";
-          console.log(res);
           this.onIsError();
         });
     } else {

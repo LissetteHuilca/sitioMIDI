@@ -12,13 +12,15 @@ console.log('Port:', port);
 
 const transporter = nodemailer.createTransport({
 
-    host: 'smtp.gmail.com',
-    provider: 'gmail',
-    port: 465,
-    secure: true,
+  host: "smtp-mail.outlook.com",
+  secureConnection: false,
+  port: 587,
+  tls: {
+      chipers: "SSLv3"
+  },
     auth: {
-        user: 'kimmym1107@gmail.com', // Enter here email address from which you want to send emails
-        pass: 'russofyrayito' // Enter here password for email account from which you want to send emails
+        user: 'proyectosmidi@espol.edu.ec', // Enter here email address from which you want to send emails
+        pass: 'Amomidi2001' // Enter here password for email account from which you want to send emails
     },
     tls: {
     rejectUnauthorized: false
@@ -62,7 +64,7 @@ app.post('/send', function (req, res) {
     let copyToSender = req.body.contactFormCopy;
   
     let mailOptions = {
-      to: ['rlhuilca@espol.edu.ec'], // Enter here the email address on which you want to send emails from your customers
+      to: ['proyectosmidi@espol.edu.ec','nsolorza@espol.edu.ec','dcarrera@espol.edu.ec'], // Enter here the email address on which you want to send emails from your customers
       from: senderName,
       subject: messageSubject,
       text: messageText,

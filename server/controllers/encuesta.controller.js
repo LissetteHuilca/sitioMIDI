@@ -28,10 +28,8 @@ encuestaCtrl.createEncuesta = async (req, res) => {
 };
 
 encuestaCtrl.getEncuesta = async (req, res) => {
-    //console.log(req.params.id);
     const encuesta = await Encuesta.findById(req.params.id);
     res.json(encuesta);
-    //res.json('received');
 }
 
 encuestaCtrl.editEncuesta = async (req, res) => {

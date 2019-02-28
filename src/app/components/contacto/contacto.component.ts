@@ -24,8 +24,7 @@ export class ContactoComponent implements OnInit {
   enviarContacto(form: NgForm) {
      
     this.connectionService.sendMessage(form.value).subscribe(() => {
-      console.log(form.value);
-      alert('Your message has been sent.');
+      alert('tu mensaje se ha enviado.');
       form.reset();
     }, error => {
       console.log('Error', error);

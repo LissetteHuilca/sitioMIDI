@@ -68,7 +68,6 @@ export class LineagraficasComponent implements OnInit {
     this.lineagraficaService.getLineagraficas()
       .subscribe(res => {
         this.lineagraficaService.lineagraficas = res as Lineagrafica[];
-        console.log('getLineagrafica', res);
 
         this.lineagraficaService.lineagraficas.forEach(element => {
           switch (element.loli) {

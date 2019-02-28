@@ -26,7 +26,6 @@ export class RestoreComponent implements OnInit {
   }
 
   ngOnInit() {
-    console.log('codigo', this.user.codigo);
     if(this.user.codigo){
       this.router.navigate(['/restore/user']);
     }else{
@@ -39,15 +38,12 @@ export class RestoreComponent implements OnInit {
           this.authService
             .passwordUser(this.user)
             .subscribe(user => {
-              console.log(user);
               setTimeout(() => {
                 this.router.navigate(['/user/login']);
               }, 500);
-              ///location.reload();
             },
             res => {
               this.msgError = "La contraseña ya fue actualizada";
-              console.log(res);
               this.onIsError();
             });
         } else {

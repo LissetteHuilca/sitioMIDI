@@ -39,14 +39,10 @@ export class LoginComponent implements OnInit {
         .subscribe(
           data => {
             this.authService.setUserLoggedIn(data);
-            console.log(" UserLogged ",data);
             this.router.navigate(['/juegos']);
             location.reload();
-            console.log('Success trace', data);
-            console.log('userLogged',this.authService.usserLogged);
           },
           error =>{
-            console.log('Error trace',error);
             this.loginError = error.error.status;
             setTimeout(() => {
               this.loginError = "";
@@ -76,7 +72,6 @@ export class LoginComponent implements OnInit {
   enviarRestaurar(form: NgForm) {
     
     this.passwordService.sendMessagePass(form.value).subscribe(() => {
-      console.log(form.value);
       alert('Se ha enviado un mensaje a su correo');
     }, error => {
       console.log('Error', error);
